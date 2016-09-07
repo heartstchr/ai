@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>niki.ai</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Task</h1>
+    </div>
+    <div class="container">
+        <div class="col col-md-2">
+            <div menu ></div>
+        </div>
+        <div class="col col-md-8">
+            <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+            <div ng-view></div>
+        </div>
+    </div>
+    <div class="container">
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div foot></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="bc/angular/angular.min.js"></script>
+    <script src="angular/app.js"></script>
+
+
+</body>
+</html>

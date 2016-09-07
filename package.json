@@ -1,0 +1,25 @@
+{
+  "name": "ai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heartstchr/ai.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heartstchr/ai/issues"
+  },
+  "homepage": "https://github.com/heartstchr/ai#readme",
+  "dependencies": {
+    "good": "^5.1.0",
+    "good-console": "^4.0.0",
+    "hapi": "^8.0.0",
+    "swig": "^1.4.2"
+  }
+}
