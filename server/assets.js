@@ -44,7 +44,7 @@ exports.register = function(server, options, next){
         },
         {
             method: 'GET',
-            path: '/bc/{path*}',
+            path: '/bower_components/{path*}',
             config: {
                 handler: {
                     directory: { path: './bower_components' }

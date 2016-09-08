@@ -2,29 +2,33 @@
     'use strict';
 
     angular
-        .module('app', ['ngRoute', 'ngSanitize', 'ui.select', 'ui.bootstrap'])
-        .config(config);
+        .module('app', ['ngRoute'])
+        .config(config)
 
     config.$inject = ['$routeProvider'];
     function config($routeProvider) {
         $routeProvider
             .when('/', {
-                controller: 'MainController',
+                controller: 'HomeController',
+                templateUrl: 'views/task/task1.html',
                 controllerAs: 'ai'
             })
 
-            .when('/about', {
-                controller: 'MainController',
-                templateUrl: 'views/about.html',
+            .when('/task2', {
+                controller: 'HomeController',
+                templateUrl: 'views/task/task2.html',
+                controllerAs: 'ai'
+            })
+                
+    	//login management
+            .when('/404', {
+                title : '404 ',
+                controller: '404Controller',
+                templateUrl: 'views/404.html',
                 controllerAs: 'ai'
             })
 
             .otherwise({ redirectTo: '/404' });
     
     }
-
-    MainController.$inject = [];
-    function MainController() {
-        var ai = this;
-    }    
 })();

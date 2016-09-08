@@ -1,0 +1,33 @@
+<div>
+	<div class="col-md-4">
+		<form  name="form" class="form-horizontal" ng-submit="ai.setNumberofString()" role="form">
+			<div class="form-group" ng-class="{ 'has-error': form.snumber.$dirty && form.snumber.$error.required }">
+			    <label class="control-label">Number of strings</label>
+			    <div>
+					<input type="number" name="snumber" class="form-control" ng-model="ai.noOfStrings" placeholder="Number of strings">
+			    </div>
+			</div>
+			<div class="form-actions pull-right">
+				<div class="col-sm-12">
+					<button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Set</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="col-md-4" ng-show="ai.set">
+		Enter List of String
+		<div ng-repeat="t in ai.getTimes(ai.noOfStrings) track by $index">
+			<input type="text" name="string" class="form-control" ng-model="ai.Strings[$index]" placeholder="Enter a string">
+		</div>
+	</div>
+	<div class="col-md-4" ng-show="ai.set" > 
+		<a ng-click="sortType = ai.Strings[$index]; sortReverse = !sortReverse">
+          Sort by length of string
+          <span ng-show="sortType == ai.Strings[$index] && !sortReverse" class="glyphicon glyphicon-arrow-down"></span>
+          <span ng-show="sortType == ai.Strings[$index] && sortReverse" class="glyphicon glyphicon-arrow-up"></span>
+        </a>
+		<div ng-repeat="t in ai.getTimes(ai.noOfStrings) track by $index ">
+			<span> {{ai.Strings[$index]}} </span>
+		</div>
+	</div>
+</div>
